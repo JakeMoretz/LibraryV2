@@ -1,18 +1,19 @@
-const card = document.querySelector('.book-card');
+const card = document.querySelector('.grid');
 const button = document.querySelector('button');
+
 
 let myLibrary = [
     {
         title: 'The Hobbit',
         author: 'J.R.R. Tolkien',
         pages: 295,
-        read: 'Have read?',
+        read: 'have not read',
     },
     {
         title: 'Harry Potter',
         author: 'J.K. Rowling',
         pages: 223,
-        read: 'have read?',
+        read: 'have not read',
     },
 ];
 
@@ -30,13 +31,26 @@ function addBookToLibrary() {
 function displayBook() {
     myLibrary.forEach((book) => {
         let newDiv = document.createElement('div');
-        let newP = document.createElement('p');
-        let newPText = document.createTextNode(`Title ${book.title}`);
+        let newPara = document.createElement('p');
 
-        newP.appendChild(newPText);
+        let newParaText = document.createTextNode(`Book: ${book.title}`);
+        let newParaText2 = document.createTextNode(`Author: ${book.author}`);
+        let newParaText3 = document.createTextNode(`Pages: ${book.pages}`);
+        let newParaText4 = document.createTextNode(`read? ${book.read}`);
+
+        newDiv.className = 'book-card';
+
+        newPara.appendChild(newParaText);
+        newPara.appendChild(document.createElement('br'));
+        newPara.appendChild(newParaText2);
+        newPara.appendChild(document.createElement('br'));
+        newPara.appendChild(newParaText3);
+        newPara.appendChild(document.createElement('br'));
+        newPara.appendChild(newParaText4);
+
+        newDiv.appendChild(newPara);
 
         card.appendChild(newDiv);
-        card.appendChild(newP);
     });
 }
 
