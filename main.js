@@ -1,7 +1,6 @@
 const card = document.querySelector('.grid');
 const button = document.querySelector('button');
 
-
 let myLibrary = [
     {
         title: 'The Hobbit',
@@ -24,8 +23,21 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+
+
+function createBook() {
+
+}
+
 function addBookToLibrary() {
-    console.log(myLibrary);
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let read = document.getElementById('read').value;
+
+    myLibrary.push({ title, author, pages, read });
+
+    console.log(myLibrary)
 }
 
 function displayBook() {
@@ -55,5 +67,6 @@ function displayBook() {
 }
 
 button.addEventListener('click', () => {
+    addBookToLibrary();
     displayBook();
 });
