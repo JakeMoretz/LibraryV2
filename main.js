@@ -1,20 +1,7 @@
 const card = document.querySelector('.grid');
 const button = document.querySelector('button');
 
-let myLibrary = [
-    {
-        title: 'The Hobbit',
-        author: 'J.R.R. Tolkien',
-        pages: 295,
-        read: 'have not read',
-    },
-    {
-        title: 'Harry Potter',
-        author: 'J.K. Rowling',
-        pages: 223,
-        read: 'have not read',
-    },
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -23,29 +10,13 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-
-
-function createBook() {
-
-}
-
-function addBookToLibrary() {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
-
-    myLibrary.push({ title, author, pages, read });
-
-    console.log(myLibrary)
-}
-
 function displayBook() {
+    card.textContent = '';
     myLibrary.forEach((book) => {
         let newDiv = document.createElement('div');
         let newPara = document.createElement('p');
 
-        let newParaText = document.createTextNode(`Book: ${book.title}`);
+        let newParaText = document.createTextNode(`Title: ${book.title}`);
         let newParaText2 = document.createTextNode(`Author: ${book.author}`);
         let newParaText3 = document.createTextNode(`Pages: ${book.pages}`);
         let newParaText4 = document.createTextNode(`read? ${book.read}`);
@@ -66,7 +37,28 @@ function displayBook() {
     });
 }
 
-button.addEventListener('click', () => {
-    addBookToLibrary();
+function clearInput() {
+    title.value = '';
+    author.value = '';
+    pages.value = '';
+    read.value = '';
+}
+
+function addBookToLibrary() {
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('pages').value;
+    let read = document.getElementById('read').value;
+
+    let newBook = new Book(title, author, pages, read);
+
+    myLibrary.push(newBook);
+
     displayBook();
+}
+
+button.addEventListener('click', (event) => {
+    event.preventDefault();
+    addBookToLibrary();
+    clearInput();
 });
