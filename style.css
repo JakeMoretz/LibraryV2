@@ -1,4 +1,10 @@
+* {
+    font-family: 'Bruno Ace', cursive;
+}
+
+
 body {
+    background-color: black;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -7,29 +13,56 @@ body {
 }
 
 .grid {
-    /* background-color:aqua; */
+    
+    height: 100vh;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-template-rows: repeat(4, 1fr);
-    /* height: 200px; */
+    grid-template-columns: repeat(auto-fill,330px);
+    /* grid-template-rows: repeat(3, 1fr); */
+    height: 200px;
     grid-column: 2/3;
     grid-row: 2/4;
-    gap: 20px;
+    gap: 30px;
+    padding: 30px;
 }
 
-h3 {
+.library {
+    color: white;
     grid-row: 1/2;
-    grid-column: 1/6;
-    align-self: center;
+    grid-column: 2/3;
     justify-self: center;
+    align-items: flex-end;
+    font-family: 'Bruno Ace', cursive;
+    font-size: 1.5em;
 }
 
 .book-card {
-    
+    border-radius: 10px;
+    background-color: rgba(1, 239, 247, 0.5);
+    opacity: 0.8;
     border: 1px solid black;
-    width: 125px;
+    width: 250px;
+    /* height: 200px; */
     width: 100%;
+    
+}
+
+input {
+    height: 30px;
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    border: 1px solid ;
+}
+
+p {
+    padding: 10px;
+    color: white;
+    
+    line-height: 35px;
 }
 
 .input-form {
@@ -38,11 +71,57 @@ h3 {
 }
 
 form {
+    color: white;
+    grid-column:1/3;
+    grid-row: 2/3;
     justify-content: center;
-    /* min-width: 300px;
-    max-width: 350px; */
+    margin: 10px;
+   
+}
+
+
+.book-info {
+    color: white;
+    grid-column: 1/3;
+    font-family: 'Bruno Ace', cursive;
+    font-size: 1.5em;
+    justify-self: center;
+}
+
+
+
+
+.sidebar {
+    display: grid;
+    grid-column: 1/2;
+    grid-template-rows: 10% 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    min-width: 400px;
+    grid-row: 1/5;
+    
+    height: 100vh;
+    display: grid;
+    
 }
 
 .btn {
+    grid-row: 3/4;
+    grid-column: 1/3;
     justify-self: center;
+}
+
+button {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+    border: 1px solid
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }

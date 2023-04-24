@@ -6,10 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>libraryV2</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Bruno+Ace&family=Climate+Crisis&family=Indie+Flower&family=Montserrat&family=Poppins:ital,wght@0,400;1,900&family=Sacramento&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style2.css">
     </head>
     <body>
         <div class="sidebar">
-            <h3>Enter Book Information</h3>
+            <h3 class="book-info">Enter Book Information</h3>
             <form action="" class="input-form">
                 <label for="title">Title:</label>
                 <input type="text" id="title" name="title" />
@@ -20,7 +24,7 @@
                 <label for="pages">Pages:</label>
                 <input type="text" id="pages" names="pages" />
 
-                <label for="text">read?</label>
+                <label for="text">Read?</label>
                 <input type="text" id="read" name="read" />
             </form>
 
@@ -28,10 +32,10 @@
                 <button>Display Book</button>
             </div>
         </div>
-        <h3>Library</h3>
-        <div class="grid">
-            
-        </div>
+        <!-- <div class="wrapper"> -->
+            <h3 class="library">Library</h3>
+            <div class="grid"></div>
+        <!-- </div> -->
 
         <script src="main.js"></script>
     </body>
