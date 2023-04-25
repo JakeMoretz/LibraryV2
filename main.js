@@ -12,11 +12,6 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function deleteBook(index) {
-    myLibrary.splice(index, 1);
-    
-}
-
 function displayBook() {
     card.textContent = '';
     myLibrary.forEach((book) => {
@@ -29,7 +24,7 @@ function displayBook() {
         let newParaText3 = document.createTextNode(`Pages: ${book.pages}`);
         let newParaText4 = document.createTextNode(`read? ${book.read}`);
 
-        let buttonText = document.createTextNode('Remove');
+        let buttonText = document.createTextNode('remove');
 
         newDiv.className = 'book-card';
         newButton.className = 'card-button';
@@ -48,14 +43,11 @@ function displayBook() {
 
         card.appendChild(newDiv);
 
-        newButton.querySelector(".card-button");
-        newButton.addEventListener("click", (index) => {
-            myLibrary.splice(index, 1);
-            displayBook()
-        })
-
-
-
+        newButton.querySelector('.card-button');
+        newButton.addEventListener('click', (index) => {
+            myLibrary.pop(index);
+            displayBook();
+        });
     });
 }
 
