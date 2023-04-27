@@ -3,8 +3,6 @@ const button = document.querySelector("button");
 
 let myLibrary = [];
 
-let i;
-
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -40,6 +38,7 @@ function displayBook() {
         newButton.appendChild(buttonText);
 
         newDiv.appendChild(newPara);
+
         newDiv.appendChild(newButton);
 
         card.appendChild(newDiv);
